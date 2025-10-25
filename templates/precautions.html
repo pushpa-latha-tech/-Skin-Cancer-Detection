@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Essential precautions and care guidelines for skin cancer prevention">
+    <title>Precautions & Care - SkinGuard</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='skinguard/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-stethoscope"></i>
+                SkinGuard 
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                <li><a href="{{ url_for('precautions') }}" class="nav-link active">Precautions</a></li>
+                <li><a href="{{ url_for('tips') }}" class="nav-link">Tips</a></li>
+                <li><a href="{{ url_for('emergency') }}" class="nav-link emergency">Emergency</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1><i class="fas fa-shield-alt"></i> Precautions & Care</h1>
+            <p>Essential guidelines for skin cancer prevention and early detection</p>
+        </section>
+
+        <!-- Warning Alert -->
+        <section class="card" style="border-left: 5px solid var(--red-danger); background: #fef2f2;">
+            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <i class="fas fa-exclamation-triangle" style="color: var(--red-danger); font-size: 2rem; margin-top: 0.2rem;"></i>
+                <div>
+                    <h3 style="color: var(--red-danger); margin-bottom: 0.5rem;">Important Medical Notice</h3>
+                    <p style="color: #7f1d1d; line-height: 1.6;">
+                        These guidelines are for educational purposes only and do not replace professional medical advice. 
+                        If you notice any changes in your skin, unusual growths, or suspicious lesions, 
+                        <strong>consult a qualified dermatologist immediately</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sun Protection -->
+        <section class="card">
+            <h2><i class="fas fa-sun" style="color: #f59e0b;"></i> Sun Protection Guidelines</h2>
+            <div class="grid grid-2" style="margin-top: 1.5rem;">
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-umbrella-beach"></i> Avoid Excessive Sun Exposure
+                    </h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Peak Hours:</strong> Limit outdoor activities between 10 AM - 4 PM when UV rays are strongest</li>
+                        <li><strong>Shade Seeking:</strong> Stay under trees, umbrellas, or covered areas when outdoors</li>
+                        <li><strong>Weather Awareness:</strong> UV rays can penetrate clouds - protection needed even on cloudy days</li>
+                        <li><strong>Reflection Risk:</strong> Be extra careful around water, sand, and snow that reflect UV rays</li>
+                        <li><strong>Altitude Consideration:</strong> UV exposure increases with altitude - take extra precautions</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-shield-alt"></i> Daily Sunscreen Protection
+                    </h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>SPF 30 Minimum:</strong> Use broad-spectrum sunscreen with at least SPF 30</li>
+                        <li><strong>Generous Application:</strong> Apply 1 ounce (30ml) to cover entire body</li>
+                        <li><strong>Reapplication:</strong> Every 2 hours and after swimming or sweating</li>
+                        <li><strong>Year-Round Use:</strong> Apply sunscreen daily, even in winter months</li>
+                        <li><strong>Face Focus:</strong> Use separate facial sunscreen for sensitive facial skin</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Sunscreen Application Guide -->
+            <div style="background: var(--light-blue); padding: 1.5rem; border-radius: 0.8rem; margin-top: 2rem;">
+                <h4 style="color: var(--primary-blue); margin-bottom: 1rem; text-align: center;">
+                    <i class="fas fa-hand-paper"></i> Proper Sunscreen Application
+                </h4>
+                <div class="grid grid-3">
+                    <div style="text-align: center;">
+                        <i class="fas fa-clock" style="font-size: 2rem; color: var(--secondary-blue); margin-bottom: 0.5rem;"></i>
+                        <h5 style="margin-bottom: 0.5rem;">Apply 30 Minutes Before</h5>
+                        <p style="font-size: 0.9rem;">Sun exposure for proper absorption</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-sync-alt" style="font-size: 2rem; color: var(--secondary-blue); margin-bottom: 0.5rem;"></i>
+                        <h5 style="margin-bottom: 0.5rem;">Reapply Every 2 Hours</h5>
+                        <p style="font-size: 0.9rem;">Or after swimming/sweating</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-eye" style="font-size: 2rem; color: var(--secondary-blue); margin-bottom: 0.5rem;"></i>
+                        <h5 style="margin-bottom: 0.5rem;">Don't Forget Areas</h5>
+                        <p style="font-size: 0.9rem;">Ears, lips, feet, and hands</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Protective Clothing -->
+        <section class="card">
+            <h2><i class="fas fa-tshirt" style="color: var(--green-success);"></i> Protective Clothing & Accessories</h2>
+            <div class="grid grid-2" style="margin-top: 1.5rem;">
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Essential Protective Wear</h3>
+                    <div style="space-y: 1rem;">
+                        <div style="background: var(--gray-light); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                            <h4 style="color: var(--gray-dark); margin-bottom: 0.5rem;">
+                                <i class="fas fa-hat-cowboy"></i> Wide-Brimmed Hat
+                            </h4>
+                            <p style="font-size: 0.9rem;">4-inch brim minimum to protect face, ears, and neck</p>
+                        </div>
+                        
+                        <div style="background: var(--gray-light); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                            <h4 style="color: var(--gray-dark); margin-bottom: 0.5rem;">
+                                <i class="fas fa-glasses"></i> UV-Blocking Sunglasses
+                            </h4>
+                            <p style="font-size: 0.9rem;">100% UV protection to prevent eye and eyelid damage</p>
+                        </div>
+                        
+                        <div style="background: var(--gray-light); padding: 1rem; border-radius: 0.5rem;">
+                            <h4 style="color: var(--gray-dark); margin-bottom: 0.5rem;">
+                                <i class="fas fa-tshirt"></i> Long-Sleeved Clothing
+                            </h4>
+                            <p style="font-size: 0.9rem;">Tightly woven, dark-colored fabrics for maximum protection</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Fabric Guidelines</h3>
+                    <div style="background: #ecfdf5; border-left: 4px solid var(--green-success); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <h4 style="color: #065f46; margin-bottom: 0.5rem;">Best Fabric Choices</h4>
+                        <ul style="color: #047857; font-size: 0.9rem; margin-left: 1rem;">
+                            <li>Polyester and polyester blends</li>
+                            <li>Tightly woven cotton</li>
+                            <li>Denim and canvas materials</li>
+                            <li>UPF-rated clothing (UPF 30+)</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem; border-radius: 0.5rem;">
+                        <h4 style="color: #92400e; margin-bottom: 0.5rem;">Avoid These Fabrics</h4>
+                        <ul style="color: #78350f; font-size: 0.9rem; margin-left: 1rem;">
+                            <li>Loosely woven cotton</li>
+                            <li>Thin or lightweight materials</li>
+                            <li>White or light-colored fabrics</li>
+                            <li>Wet clothing (reduces protection)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Self-Examination -->
+        <section class="card">
+            <h2><i class="fas fa-search" style="color: var(--primary-blue);"></i> Regular Self-Examination</h2>
+            <div style="margin-top: 1.5rem;">
+                <div style="background: var(--light-blue); padding: 1.5rem; border-radius: 0.8rem; margin-bottom: 2rem; text-align: center;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">
+                        <i class="fas fa-calendar-check"></i> Monthly Skin Checks
+                    </h3>
+                    <p style="color: var(--gray-dark);">Perform a thorough self-examination every month to detect changes early</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">ABCDE Method</h3>
+                        <p style="margin-bottom: 1rem;">Look for these warning signs in moles and lesions:</p>
+                        
+                        <div style="space-y: 1rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: var(--red-danger); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">A</div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Asymmetry</h4>
+                                    <p style="font-size: 0.9rem; color: var(--gray-medium);">One half doesn't match the other</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: var(--red-danger); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">B</div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Border</h4>
+                                    <p style="font-size: 0.9rem; color: var(--gray-medium);">Irregular, scalloped, or poorly defined edges</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: var(--red-danger); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">C</div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Color</h4>
+                                    <p style="font-size: 0.9rem; color: var(--gray-medium);">Multiple colors or uneven color distribution</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: var(--red-danger); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">D</div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Diameter</h4>
+                                    <p style="font-size: 0.9rem; color: var(--gray-medium);">Larger than 6mm (pencil eraser size)</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div style="background: var(--red-danger); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">E</div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Evolving</h4>
+                                    <p style="font-size: 0.9rem; color: var(--gray-medium);">Changes in size, shape, color, or texture</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Self-Exam Steps</h3>
+                        <ol style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li><strong>Full Body Mirror:</strong> Examine front and back in full-length mirror</li>
+                            <li><strong>Arms & Hands:</strong> Check underarms, forearms, palms, and between fingers</li>
+                            <li><strong>Legs & Feet:</strong> Sit down to examine legs, feet, and between toes</li>
+                            <li><strong>Hair & Scalp:</strong> Use hand mirror or ask partner to check scalp</li>
+                            <li><strong>Face & Neck:</strong> Carefully examine all areas including behind ears</li>
+                            <li><strong>Documentation:</strong> Take photos of suspicious spots to track changes</li>
+                        </ol>
+                        
+                        <div style="background: #ecfdf5; border: 1px solid var(--green-success); padding: 1rem; border-radius: 0.5rem; margin-top: 1.5rem;">
+                            <h4 style="color: #065f46; margin-bottom: 0.5rem;">
+                                <i class="fas fa-lightbulb"></i> Pro Tip
+                            </h4>
+                            <p style="color: #047857; font-size: 0.9rem;">
+                                Use a handheld mirror and good lighting to check hard-to-see areas. 
+                                Consider having a partner help with areas you can't see clearly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Care -->
+        <section class="card">
+            <h2><i class="fas fa-user-md" style="color: var(--secondary-blue);"></i> Professional Healthcare</h2>
+            <div class="grid grid-2" style="margin-top: 1.5rem;">
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Regular Dermatology Checkups</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Annual Screening:</strong> Full-body skin exam by dermatologist once yearly</li>
+                        <li><strong>High-Risk Individuals:</strong> More frequent checkups if you have risk factors</li>
+                        <li><strong>Family History:</strong> Earlier and more frequent screenings if melanoma runs in family</li>
+                        <li><strong>Previous Skin Cancer:</strong> Regular follow-up appointments as recommended</li>
+                        <li><strong>Suspicious Changes:</strong> Immediate appointment for any concerning lesions</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">When to See a Doctor Immediately</h3>
+                    <div style="background: #fef2f2; border: 2px solid var(--red-danger); padding: 1rem; border-radius: 0.5rem;">
+                        <h4 style="color: var(--red-danger); margin-bottom: 0.5rem;">
+                            <i class="fas fa-exclamation-circle"></i> Urgent Warning Signs
+                        </h4>
+                        <ul style="color: #7f1d1d; font-size: 0.9rem; margin-left: 1rem;">
+                            <li>New mole appearing after age 30</li>
+                            <li>Existing mole changing rapidly</li>
+                            <li>Mole that bleeds, itches, or becomes painful</li>
+                            <li>Sore that doesn't heal within 4 weeks</li>
+                            <li>Any spot that looks different from others</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lifestyle Factors -->
+        <section class="card">
+            <h2><i class="fas fa-heart" style="color: var(--green-success);"></i> Additional Risk Reduction</h2>
+            <div class="grid grid-2" style="margin-top: 1.5rem;">
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Avoid Tanning</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>No Tanning Beds:</strong> Artificial UV radiation significantly increases cancer risk</li>
+                        <li><strong>No Sunlamps:</strong> Avoid all artificial tanning devices</li>
+                        <li><strong>Embrace Natural Tone:</strong> Your natural skin tone is beautiful and safe</li>
+                        <li><strong>Safe Alternatives:</strong> Use sunless tanning products if desired</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Healthy Lifestyle</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Immune Support:</strong> Maintain strong immune system through healthy diet</li>
+                        <li><strong>Avoid Smoking:</strong> Smoking increases skin cancer risk</li>
+                        <li><strong>Stay Hydrated:</strong> Keep skin healthy with adequate water intake</li>
+                        <li><strong>Stress Management:</strong> Chronic stress can weaken immune function</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Plan -->
+        <section class="card" style="background: linear-gradient(135deg, var(--light-blue) 0%, #bfdbfe 100%); border: none;">
+            <div style="text-align: center;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                    <i class="fas fa-clipboard-check"></i> Your Action Plan
+                </h2>
+                <p style="color: var(--gray-dark); font-size: 1.1rem; margin-bottom: 2rem;">
+                    Start implementing these protective measures today for better skin health
+                </p>
+                
+                <div class="grid grid-3">
+                    <div style="text-align: center; background: white; padding: 1.5rem; border-radius: 0.8rem; box-shadow: var(--shadow);">
+                        <i class="fas fa-sun" style="font-size: 2.5rem; color: #f59e0b; margin-bottom: 1rem;"></i>
+                        <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Daily Protection</h4>
+                        <p style="font-size: 0.9rem;">Apply sunscreen every morning</p>
+                    </div>
+                    
+                    <div style="text-align: center; background: white; padding: 1.5rem; border-radius: 0.8rem; box-shadow: var(--shadow);">
+                        <i class="fas fa-search" style="font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 1rem;"></i>
+                        <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Monthly Check</h4>
+                        <p style="font-size: 0.9rem;">Self-examine skin using ABCDE</p>
+                    </div>
+                    
+                    <div style="text-align: center; background: white; padding: 1.5rem; border-radius: 0.8rem; box-shadow: var(--shadow);">
+                        <i class="fas fa-calendar-alt" style="font-size: 2.5rem; color: var(--green-success); margin-bottom: 1rem;"></i>
+                        <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Annual Visit</h4>
+                        <p style="font-size: 0.9rem;">Schedule dermatologist checkup</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SkinGuard AI. For educational purposes only.</p>
+        <p>This tool is not a substitute for professional medical diagnosis. Always consult healthcare professionals.</p>
+    </footer>
+
+    <!-- JavaScript for mobile navigation -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html> 

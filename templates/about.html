@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about SkinGuard AI - Advanced skin lesion detection using Convolutional Neural Networks">
+    <title>About - SkinGuard</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='skinguard/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-stethoscope"></i>
+                SkinGuard 
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link active">About</a></li>
+                <li><a href="{{ url_for('precautions') }}" class="nav-link">Precautions</a></li>
+                <li><a href="{{ url_for('tips') }}" class="nav-link">Tips</a></li>
+                <li><a href="{{ url_for('emergency') }}" class="nav-link emergency">Emergency</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1><i class="fas fa-info-circle"></i> About the Project</h1>
+            <p>Understanding Skin cancer detection technology</p>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="card">
+            <h2><i class="fas fa-microscope" style="color: var(--primary-blue);"></i> Project Description</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
+                SkinGuard is a cutting-edge web-based skin cancer detection system that leverages the power of 
+                <strong>Convolutional Neural Networks (CNNs)</strong> to analyze skin lesion images and provide 
+                instant classification results. Our mission is to make preliminary skin cancer screening more 
+                accessible while emphasizing the importance of professional medical consultation.
+            </p>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="grid grid-2">
+            <div class="card">
+                <h3><i class="fas fa-cogs" style="color: var(--secondary-blue);"></i> Technology Stack</h3>
+                <div style="margin-top: 1rem;">
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Frontend Technologies</h4>
+                        <ul style="margin-left: 1.5rem;">
+                            <li><strong>HTML5</strong> - Semantic markup and structure</li>
+                            <li><strong>CSS3</strong> - Responsive design and styling</li>
+                            <li><strong>JavaScript (ES6+)</strong> - Interactive functionality</li>
+                            <li><strong>TensorFlow.js</strong> - Client-side AI model execution</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Design Features</h4>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Fully responsive design</li>
+                            <li>Accessibility compliant (ARIA labels)</li>
+                            <li>Progressive Web App capabilities</li>
+                            <li>Cross-browser compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-database" style="color: var(--green-success);"></i> Dataset & Training</h3>
+                <div style="margin-top: 1rem;">
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Data Source</h4>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Kaggle Dataset:</strong> Skin Cancer - Malignant vs. Benign<br>
+                        <em>Comprehensive collection of dermatoscopic images</em>
+                    </p>
+                    
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Dataset Specifications</h4>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>High-resolution skin lesion images</li>
+                        <li>Binary classification: Malignant vs. Benign</li>
+                        <li>Diverse demographic representation</li>
+                        <li>Expert-validated ground truth labels</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Architecture -->
+        <section class="card">
+            <h2><i class="fas fa-brain" style="color: var(--primary-blue);"></i>Model Architecture</h2>
+            <div class="grid grid-2" style="margin-top: 1.5rem;">
+                <div>
+                    <h3 style="color: var(--secondary-blue);">Convolutional Neural Network</h3>
+                    <p style="margin-top: 1rem; line-height: 1.7;">
+                        Our CNN model is specifically designed for medical image classification, 
+                        utilizing state-of-the-art deep learning techniques to analyze skin lesion patterns, 
+                        textures, and morphological features that are crucial for cancer detection.
+                    </p>
+                    
+                    <h4 style="margin-top: 1.5rem; color: var(--primary-blue);">Key Features</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Input size: 150×150 pixel images</li>
+                        <li>Multi-layer feature extraction</li>
+                        <li>Dropout regularization for robustness</li>
+                        <li>Optimized for mobile deployment</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--secondary-blue);">Model Layers</h3>
+                    <div style="background: var(--light-blue); padding: 1.5rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <div style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+                            <div style="margin-bottom: 0.5rem;"><strong>Input Layer:</strong> 150×150×3</div>
+                            <div style="margin-bottom: 0.5rem;"><strong>Conv2D:</strong> 32 filters, 3×3 kernel</div>
+                            <div style="margin-bottom: 0.5rem;"><strong>MaxPooling2D:</strong> 2×2 pool size</div>
+                            <div style="margin-bottom: 0.5rem;"><strong>Conv2D:</strong> 64 filters, 3×3 kernel</div>
+                            <div style="margin-bottom: 0.5rem;"><strong>MaxPooling2D:</strong> 2×2 pool size</div>
+                            <div style="margin-bottom: 0.5rem;"><strong>Conv2D:</strong> 128 filters, 3×3 kernel</div>
+                            <div style="margin-bottom: 0.5rem;"><strong>GlobalAvgPool:</strong> Feature aggregation</div>
+                            <div style="margin-bottom: 0.5rem;"><strong>Dense:</strong> 512 units, ReLU</div>
+                            <div style="margin-bottom: 0.5rem;"><strong>Dropout:</strong> 0.5 rate</div>
+                            <div><strong>Output:</strong> 2 classes (Sigmoid)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Importance -->
+        <section class="card">
+            <h2><i class="fas fa-heart" style="color: var(--red-danger);"></i> The Importance of Early Detection</h2>
+            <div class="grid grid-2" style="margin-top: 1.5rem;">
+                <div>
+                    <h3 style="color: var(--primary-blue);">Why Early Detection Matters</h3>
+                    <p style="line-height: 1.7; margin-top: 1rem;">
+                        Skin cancer is one of the most common types of cancer worldwide, but it's also one of the 
+                        most treatable when detected early. The 5-year survival rate for melanoma detected in its 
+                        early stages is over 95%, compared to just 27% for advanced stages.
+                    </p>
+                    
+                    <h4 style="margin-top: 1.5rem; color: var(--primary-blue);">Statistics</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>1 in 5 Americans will develop skin cancer</li>
+                        <li>Early detection increases survival rates dramatically</li>
+                        <li>Model can help identify concerning lesions</li>
+                        <li>Regular screening saves lives</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary-blue);">Our Role in Healthcare</h3>
+                    <p style="line-height: 1.7; margin-top: 1rem;">
+                        SkinGuard serves as a preliminary screening tool to help individuals identify potentially 
+                        concerning skin lesions. While our AI provides valuable insights, we strongly emphasize 
+                        that professional medical evaluation is essential for accurate diagnosis and treatment.
+                    </p>
+                    
+                    <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem; margin-top: 1.5rem; border-radius: 0.5rem;">
+                        <h4 style="color: #92400e; margin-bottom: 0.5rem;">
+                            <i class="fas fa-exclamation-triangle"></i> Important Note
+                        </h4>
+                        <p style="color: #78350f; font-size: 0.9rem;">
+                            This web site is designed to complement, not replace, professional medical expertise. 
+                            Always consult with qualified dermatologists or healthcare providers for proper 
+                            diagnosis and treatment recommendations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use -->
+        <section class="card">
+            <h2><i class="fas fa-question-circle" style="color: var(--green-success);"></i> How to Use SkinGuard</h2>
+            <div class="grid grid-3" style="margin-top: 1.5rem;">
+                <div style="text-align: center;">
+                    <div style="background: var(--light-blue); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-upload" style="font-size: 2rem; color: var(--primary-blue);"></i>
+                    </div>
+                    <h4 style="color: var(--primary-blue);">1. Upload Image</h4>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                        Take a clear photo of the skin lesion and upload it to our platform. 
+                        Supported formats: JPG, PNG.
+                    </p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div style="background: var(--light-blue); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-cogs" style="font-size: 2rem; color: var(--primary-blue);"></i>
+                    </div>
+                    <h4 style="color: var(--primary-blue);">2. Analysis</h4>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                        Our trained CNN model analyzes the image features and patterns 
+                        to classify the lesion.
+                    </p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div style="background: var(--light-blue); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--primary-blue);"></i>
+                    </div>
+                    <h4 style="color: var(--primary-blue);">3. Get Results</h4>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                        Review the classification result and confidence score. 
+                        Always consult a medical professional for diagnosis.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team & Contact -->
+        <section class="card">
+            <h2><i class="fas fa-users" style="color: var(--primary-blue);"></i> Development & Acknowledgments</h2>
+            <div style="margin-top: 1.5rem;">
+                <p style="line-height: 1.7; margin-bottom: 1.5rem;">
+                    SkinGuard was developed as an educational and research project to demonstrate the potential 
+                    of cnn in medical screening applications. We acknowledge the importance of 
+                    responsible development and the critical role of medical professionals in healthcare.
+                </p>
+                
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Special Thanks</h3>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Kaggle community for providing quality datasets</li>
+                    <li>TensorFlow.js team for enabling client-side AI</li>
+                    <li>Medical professionals who validate AI applications</li>
+                    <li>Open-source community for continuous innovation</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SkinGuard AI. For educational purposes only.</p>
+        <p>This tool is not a substitute for professional medical diagnosis. Always consult healthcare professionals.</p>
+    </footer>
+
+    <!-- JavaScript for mobile navigation -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

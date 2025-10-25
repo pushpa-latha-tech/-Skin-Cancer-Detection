@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Healthy skin tips and lifestyle advice for optimal skin health">
+    <title>Healthy Skin Tips - SkinGuard </title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='skinguard/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-stethoscope"></i>
+                SkinGuard AI
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                <li><a href="{{ url_for('precautions') }}" class="nav-link">Precautions</a></li>
+                <li><a href="{{ url_for('tips') }}" class="nav-link active">Tips</a></li>
+                <li><a href="{{ url_for('emergency') }}" class="nav-link emergency">Emergency</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1><i class="fas fa-lightbulb"></i> Healthy Skin Tips</h1>
+            <p>Essential lifestyle advice for maintaining optimal skin health and preventing skin cancer</p>
+        </section>
+
+        <!-- Nutrition Tips -->
+        <section>
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-blue);">
+                <i class="fas fa-apple-alt"></i> Nutrition for Healthy Skin
+            </h2>
+            <div class="grid grid-3">
+                <div class="card" style="border-top: 4px solid var(--green-success);">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <i class="fas fa-carrot" style="font-size: 3rem; color: #f97316; margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--primary-blue);">Antioxidant-Rich Foods</h3>
+                    </div>
+                    <p style="margin-bottom: 1rem;">Consume foods high in vitamins A, C, and E to protect against UV damage and support skin repair.</p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li>Berries (blueberries, strawberries)</li>
+                        <li>Leafy greens (spinach, kale)</li>
+                        <li>Carrots and sweet potatoes</li>
+                        <li>Citrus fruits</li>
+                        <li>Nuts and seeds</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--secondary-blue);">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <i class="fas fa-fish" style="font-size: 3rem; color: var(--secondary-blue); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--primary-blue);">Omega-3 Fatty Acids</h3>
+                    </div>
+                    <p style="margin-bottom: 1rem;">Essential fats that help maintain skin barrier function and reduce inflammation.</p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li>Fatty fish (salmon, mackerel)</li>
+                        <li>Walnuts and flaxseeds</li>
+                        <li>Chia seeds</li>
+                        <li>Avocados</li>
+                        <li>Olive oil</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-top: 4px solid #8b5cf6;">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <i class="fas fa-seedling" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--primary-blue);">Zinc & Selenium</h3>
+                    </div>
+                    <p style="margin-bottom: 1rem;">Important minerals for DNA repair and immune function to fight skin damage.</p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li>Pumpkin seeds</li>
+                        <li>Brazil nuts</li>
+                        <li>Lean meats</li>
+                        <li>Whole grains</li>
+                        <li>Legumes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hydration Section -->
+        <section style="margin-top: 4rem;">
+            <div class="card" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: none;">
+                <div style="text-align: center;">
+                    <i class="fas fa-tint" style="font-size: 4rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
+                    <h2 style="color: var(--primary-blue); margin-bottom: 1rem;">Stay Hydrated</h2>
+                    <p style="font-size: 1.2rem; color: var(--gray-dark); margin-bottom: 2rem;">
+                        Proper hydration is crucial for maintaining healthy skin elasticity and cellular function
+                    </p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.8rem; box-shadow: var(--shadow);">
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-glass-water"></i> Daily Water Intake
+                        </h3>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li><strong>8-10 glasses</strong> of water per day</li>
+                            <li><strong>More in hot weather</strong> or during exercise</li>
+                            <li><strong>Monitor urine color</strong> - aim for pale yellow</li>
+                            <li><strong>Include water-rich foods</strong> like cucumbers and watermelon</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.8rem; box-shadow: var(--shadow);">
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-ban"></i> Limit Dehydrating Drinks
+                        </h3>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li><strong>Reduce alcohol consumption</strong> - dehydrates skin</li>
+                            <li><strong>Limit caffeine</strong> - can have mild diuretic effects</li>
+                            <li><strong>Avoid sugary drinks</strong> - can cause inflammation</li>
+                            <li><strong>Choose herbal teas</strong> as healthy alternatives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lifestyle Tips -->
+        <section style="margin-top: 4rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-blue);">
+                <i class="fas fa-heart"></i> Healthy Lifestyle Habits
+            </h2>
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 5px solid var(--green-success);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-bed"></i> Quality Sleep
+                    </h3>
+                    <p style="margin-bottom: 1rem;">
+                        Sleep is when your skin repairs and regenerates. Poor sleep can accelerate aging and weaken immune function.
+                    </p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li><strong>7-9 hours</strong> of sleep nightly</li>
+                        <li><strong>Consistent sleep schedule</strong></li>
+                        <li><strong>Cool, dark room</strong> for optimal rest</li>
+                        <li><strong>Silk or satin pillowcases</strong> reduce friction</li>
+                        <li><strong>Avoid screens</strong> 1 hour before bed</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-left: 5px solid var(--secondary-blue);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-running"></i> Regular Exercise
+                    </h3>
+                    <p style="margin-bottom: 1rem;">
+                        Exercise improves circulation, reduces stress, and boosts immune function - all beneficial for skin health.
+                    </p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li><strong>30 minutes daily</strong> moderate activity</li>
+                        <li><strong>Shower after workouts</strong> to remove sweat</li>
+                        <li><strong>Wear breathable fabrics</strong> during exercise</li>
+                        <li><strong>Protect skin</strong> during outdoor activities</li>
+                        <li><strong>Mix cardio and strength</strong> training</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-left: 5px solid #f59e0b;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-ban-smoking"></i> Avoid Smoking
+                    </h3>
+                    <p style="margin-bottom: 1rem;">
+                        Smoking significantly increases skin cancer risk and accelerates skin aging through reduced oxygen and circulation.
+                    </p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li><strong>Quit smoking</strong> completely if you currently smoke</li>
+                        <li><strong>Avoid secondhand smoke</strong> exposure</li>
+                        <li><strong>Seek support</strong> from healthcare providers</li>
+                        <li><strong>Use cessation aids</strong> if needed</li>
+                        <li><strong>Notice improvements</strong> in skin health after quitting</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-left: 5px solid #8b5cf6;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-meditation"></i> Stress Management
+                    </h3>
+                    <p style="margin-bottom: 1rem;">
+                        Chronic stress weakens immune function and can trigger or worsen skin conditions. Managing stress is crucial.
+                    </p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li><strong>Meditation</strong> or mindfulness practice</li>
+                        <li><strong>Deep breathing</strong> exercises</li>
+                        <li><strong>Yoga or tai chi</strong> for mind-body connection</li>
+                        <li><strong>Hobbies</strong> that bring joy and relaxation</li>
+                        <li><strong>Professional help</strong> when needed</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skincare Routine -->
+        <section style="margin-top: 4rem;">
+            <div class="card">
+                <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">
+                    <i class="fas fa-spa"></i> Daily Skincare Routine
+                </h2>
+                
+                <div class="grid grid-3">
+                    <div style="text-align: center; background: var(--light-blue); padding: 2rem; border-radius: 1rem;">
+                        <i class="fas fa-sun" style="font-size: 3rem; color: #f59e0b; margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Morning Routine</h3>
+                        <ol style="text-align: left; margin-left: 1rem; line-height: 1.7;">
+                            <li>Gentle cleanser</li>
+                            <li>Antioxidant serum (Vitamin C)</li>
+                            <li>Moisturizer</li>
+                            <li><strong>Broad-spectrum SPF 30+</strong></li>
+                        </ol>
+                    </div>
+                    
+                    <div style="text-align: center; background: var(--gray-light); padding: 2rem; border-radius: 1rem;">
+                        <i class="fas fa-moon" style="font-size: 3rem; color: var(--secondary-blue); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Evening Routine</h3>
+                        <ol style="text-align: left; margin-left: 1rem; line-height: 1.7;">
+                            <li>Gentle cleanser</li>
+                            <li>Treatment (retinol/acids)</li>
+                            <li>Hydrating serum</li>
+                            <li>Night moisturizer</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="text-align: center; background: #ecfdf5; padding: 2rem; border-radius: 1rem;">
+                        <i class="fas fa-calendar-week" style="font-size: 3rem; color: var(--green-success); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Weekly Care</h3>
+                        <ol style="text-align: left; margin-left: 1rem; line-height: 1.7;">
+                            <li>Gentle exfoliation</li>
+                            <li>Hydrating mask</li>
+                            <li>Full-body moisturizing</li>
+                            <li>Skin self-examination</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
+                    <h4 style="color: #92400e; margin-bottom: 0.5rem;">
+                        <i class="fas fa-exclamation-triangle"></i> Important Skincare Notes
+                    </h4>
+                    <ul style="color: #78350f; margin-left: 1rem;">
+                        <li>Always patch test new products</li>
+                        <li>Introduce new treatments gradually</li>
+                        <li>Sunscreen is the most important anti-aging product</li>
+                        <li>Consult a dermatologist for persistent skin issues</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Environmental Protection -->
+        <section style="margin-top: 4rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-blue);">
+                <i class="fas fa-leaf"></i> Environmental Protection
+            </h2>
+            <div class="grid grid-2">
+                <div class="card" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: none;">
+                    <h3 style="color: var(--green-success); margin-bottom: 1rem;">
+                        <i class="fas fa-wind"></i> Air Quality Awareness
+                    </h3>
+                    <p style="margin-bottom: 1rem;">
+                        Air pollution can contribute to premature skin aging and inflammation. Protect your skin from environmental damage.
+                    </p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li><strong>Antioxidant skincare</strong> to combat free radicals</li>
+                        <li><strong>Cleanse thoroughly</strong> after exposure to pollution</li>
+                        <li><strong>Use air purifiers</strong> indoors when possible</li>
+                        <li><strong>Avoid peak pollution hours</strong> for outdoor activities</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: none;">
+                    <h3 style="color: #d97706; margin-bottom: 1rem;">
+                        <i class="fas fa-temperature-high"></i> Climate Considerations
+                    </h3>
+                    <p style="margin-bottom: 1rem;">
+                        Different climates require adjusted skincare routines. Adapt your protection based on environmental conditions.
+                    </p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.7;">
+                        <li><strong>Hot climates:</strong> Extra hydration and frequent sunscreen application</li>
+                        <li><strong>Cold climates:</strong> Rich moisturizers and wind protection</li>
+                        <li><strong>Humid areas:</strong> Lightweight, non-comedogenic products</li>
+                        <li><strong>Dry areas:</strong> Intensive moisturizing and humidifiers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Tips Summary -->
+        <section style="margin-top: 4rem;">
+            <div class="card" style="background: var(--primary-blue); color: white; text-align: center;">
+                <h2 style="color: white; margin-bottom: 2rem;">
+                    <i class="fas fa-clipboard-check"></i> Quick Daily Reminders
+                </h2>
+                
+                <div class="grid grid-2" style="gap: 2rem;">
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 0.8rem;">
+                        <h3 style="color: #dbeafe; margin-bottom: 1rem;">✅ Do These Daily</h3>
+                        <ul style="text-align: left; margin-left: 1rem; line-height: 1.8;">
+                            <li>Apply sunscreen (SPF 30+)</li>
+                            <li>Drink 8+ glasses of water</li>
+                            <li>Eat antioxidant-rich foods</li>
+                            <li>Get 7-9 hours of sleep</li>
+                            <li>Cleanse skin gently</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 0.8rem;">
+                        <h3 style="color: #fecaca; margin-bottom: 1rem;">❌ Avoid These</h3>
+                        <ul style="text-align: left; margin-left: 1rem; line-height: 1.8;">
+                            <li>Tanning beds and sunlamps</li>
+                            <li>Excessive sun exposure (10 AM - 4 PM)</li>
+                            <li>Smoking and secondhand smoke</li>
+                            <li>Harsh scrubbing or over-exfoliation</li>
+                            <li>Picking at moles or lesions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.95); border-radius: 0.8rem;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-calendar-alt"></i> Monthly Skin Check
+                    </h3>
+                    <p style="color: var(--gray-dark); font-size: 1.1rem;">
+                        Remember to examine your entire body monthly using the ABCDE method. 
+                        Early detection saves lives!
+                    </p>
+                    <a href="precautions.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">
+                        Learn the ABCDE Method
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SkinGuard AI. For educational purposes only.</p>
+        <p>This tool is not a substitute for professional medical diagnosis. Always consult healthcare professionals.</p>
+    </footer>
+
+    <!-- JavaScript for mobile navigation -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

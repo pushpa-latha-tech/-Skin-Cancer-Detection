@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered skin lesion analysis tool for detecting malignant and benign skin conditions">
+    <title>SkinGuard AI - Skin Lesion Detection</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+    <!-- Flask Static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='skinguard/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">
+                <i class="fas fa-stethoscope"></i> SkinGuard
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="{{ url_for('index') }}" class="nav-link active">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                <li><a href="{{ url_for('precautions') }}" class="nav-link">Precautions</a></li>
+                <li><a href="{{ url_for('tips') }}" class="nav-link">Tips</a></li>
+                <li><a href="{{ url_for('emergency') }}" class="nav-link emergency">Emergency</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <section class="page-title">
+            <h1><i class="fas fa-microscope"></i> Skin Cancer Detector</h1>
+            <p>Upload an image to detect possible skin cancer.</p>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <div class="card">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="imageInput" class="file-input" accept=".jpg,.jpeg,.png">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Upload Skin Lesion Image</h3>
+                        <p>Drag & drop or click to select</p>
+                        <p class="text-sm"><strong>Supported:</strong> JPG, PNG only</p>
+                        <button type="button" class="btn btn-primary">Choose File</button>
+                    </div>
+                </div>
+
+                <!-- Preview -->
+                <div class="image-preview" id="imagePreview">
+                    <img id="previewImg" class="preview-image">
+                    <div class="preview-info">
+                        <p id="imageInfo"></p>
+                        <button type="button" class="btn btn-primary" id="analyzeBtn" disabled>
+                            <i class="fas fa-search"></i> Analyze Image
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading -->
+                <div class="loading" id="loadingIndicator">
+                    <div class="spinner"></div>
+                    <p>Analyzing image...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="results-section" id="resultsSection">
+            <div class="result-card" id="resultCard">
+                <div class="result-label" id="resultLabel"></div>
+                <div class="result-confidence" id="resultConfidence"></div>
+                <div class="disclaimer">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h4>
+                    <p>This web site is for educational purposes only. Always consult a qualified dermatologist.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button type="button" class="btn btn-primary" id="newAnalysisBtn">
+                    <i class="fas fa-redo"></i> Analyze Another
+                </button>
+                <a href="{{ url_for('emergency') }}" class="btn btn-emergency" style="margin-left: 1rem;">
+                    <i class="fas fa-phone"></i> Find Medical Help
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 SkinGuard. For educational purposes only.</p>
+        <p>This tool is not a substitute for professional medical advice.</p>
+    </footer>
+
+    <!-- Flask Static JS -->
+    <script src="{{ url_for('static', filename='skinguard/app.js') }}"></script>
+</body>
+</html>

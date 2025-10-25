@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emergency healthcare contacts and immediate medical assistance information">
+    <title>Emergency Healthcare Contacts - SkinGuard AI</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='skinguard/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-stethoscope"></i>
+                SkinGuard 
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                <li><a href="{{ url_for('precautions') }}" class="nav-link">Precautions</a></li>
+                <li><a href="{{ url_for('tips') }}" class="nav-link">Tips</a></li>
+                <li><a href="{{ url_for('emergency') }}" class="nav-link emergency active">Emergency</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1><i class="fas fa-ambulance"></i> Emergency Healthcare Contacts</h1>
+            <p>Quick access to medical assistance and emergency services</p>
+        </section>
+
+        <!-- Emergency Alert -->
+        <section class="card" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 5px solid var(--red-danger);">
+            <div style="text-align: center;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: var(--red-danger); margin-bottom: 1rem;"></i>
+                <h2 style="color: var(--red-danger); margin-bottom: 1rem;">Medical Emergency?</h2>
+                <p style="font-size: 1.2rem; color: #7f1d1d; margin-bottom: 2rem;">
+                    If you are experiencing a life-threatening emergency, call emergency services immediately
+                </p>
+                <a href="tel:911" class="btn btn-emergency" style="font-size: 1.2rem; padding: 1rem 2rem; animation: pulse 2s infinite;">
+                    <i class="fas fa-phone"></i> Call 911 (USA) - Emergency Services
+                </a>
+            </div>
+        </section>
+
+        <!-- International Emergency Numbers -->
+        <section class="card">
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">
+                <i class="fas fa-globe"></i> International Emergency Numbers
+            </h2>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-flag"></i> Country/Region</th>
+                            <th><i class="fas fa-phone"></i> Emergency Number</th>
+                            <th><i class="fas fa-info-circle"></i> Services</th>
+                            <th><i class="fas fa-external-link-alt"></i> Quick Dial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🇺🇸 United States</strong></td>
+                            <td>911</td>
+                            <td>Police, Fire, Medical</td>
+                            <td><a href="tel:911" class="btn btn-emergency" style="padding: 0.3rem 0.8rem; font-size: 0.9rem;">Call 911</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇮🇳 India</strong></td>
+                            <td>108</td>
+                            <td>Emergency Medical Services</td>
+                            <td><a href="tel:108" class="btn btn-emergency" style="padding: 0.3rem 0.8rem; font-size: 0.9rem;">Call 108</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇪🇺 European Union</strong></td>
+                            <td>112</td>
+                            <td>Universal Emergency</td>
+                            <td><a href="tel:112" class="btn btn-emergency" style="padding: 0.3rem 0.8rem; font-size: 0.9rem;">Call 112</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇬🇧 United Kingdom</strong></td>
+                            <td>999</td>
+                            <td>Police, Fire, Ambulance</td>
+                            <td><a href="tel:999" class="btn btn-emergency" style="padding: 0.3rem 0.8rem; font-size: 0.9rem;">Call 999</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇨🇦 Canada</strong></td>
+                            <td>911</td>
+                            <td>Police, Fire, Medical</td>
+                            <td><a href="tel:911" class="btn btn-emergency" style="padding: 0.3rem 0.8rem; font-size: 0.9rem;">Call 911</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇦🇺 Australia</strong></td>
+                            <td>000</td>
+                            <td>Police, Fire, Ambulance</td>
+                            <td><a href="tel:000" class="btn btn-emergency" style="padding: 0.3rem 0.8rem; font-size: 0.9rem;">Call 000</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- When to Seek Immediate Medical Attention -->
+        <section class="card" style="border-left: 5px solid var(--red-danger);">
+            <h2 style="color: var(--red-danger); margin-bottom: 1.5rem;">
+                <i class="fas fa-exclamation-circle"></i> When to Seek Immediate Medical Attention
+            </h2>
+            <div class="grid grid-2">
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">🚨 Urgent Skin Cancer Signs</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8; color: #7f1d1d;">
+                        <li><strong>Rapidly changing mole</strong> - size, shape, or color changes within weeks</li>
+                        <li><strong>Bleeding lesion</strong> - any skin spot that bleeds without trauma</li>
+                        <li><strong>Non-healing sore</strong> - doesn't heal after 4 weeks</li>
+                        <li><strong>New pigmented lesion</strong> after age 30</li>
+                        <li><strong>Painful or itchy mole</strong> that wasn't before</li>
+                        <li><strong>Irregular borders</strong> that are becoming more jagged</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">⚡ Other Emergency Signs</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8; color: #7f1d1d;">
+                        <li><strong>Severe allergic reaction</strong> - swelling, difficulty breathing</li>
+                        <li><strong>Signs of infection</strong> - pus, red streaking, fever</li>
+                        <li><strong>Severe burns</strong> - extensive sun damage or chemical burns</li>
+                        <li><strong>Suspicious lymph nodes</strong> - swollen, hard, or painful</li>
+                        <li><strong>Systemic symptoms</strong> - fever, fatigue with skin changes</li>
+                        <li><strong>Multiple new lesions</strong> appearing rapidly</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: #fef2f2; padding: 1.5rem; border-radius: 0.8rem; margin-top: 2rem; text-align: center;">
+                <h4 style="color: var(--red-danger); margin-bottom: 1rem;">
+                    <i class="fas fa-clock"></i> Don't Wait - Act Fast
+                </h4>
+                <p style="color: #7f1d1d; font-size: 1.1rem;">
+                    Early intervention can be life-saving. Trust your instincts - if something feels wrong, 
+                    seek medical attention immediately.
+                </p>
+            </div>
+        </section>
+
+        <!-- Medical Contacts Directory -->
+        <section>
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">
+                <i class="fas fa-address-book"></i> Medical Contacts Directory
+            </h2>
+            
+            <div class="grid grid-2">
+                <!-- Dermatology Services -->
+                <div class="card" style="border-top: 4px solid var(--secondary-blue);">
+                    <h3 style="color: var(--secondary-blue); margin-bottom: 1rem;">
+                        <i class="fas fa-user-md"></i> Dermatologist
+                    </h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray-medium);">Specialized skin cancer detection and treatment</p>
+                    
+                    <div style="background: var(--light-blue); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <h4 style="color: var(--primary-blue);">Sample Dermatology Clinic</h4>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-phone"></i> <strong>Phone:</strong> (555) 123-DERM</p>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 123 Medical Center Dr.</p>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Fri 8AM-5PM</p>
+                        <a href="tel:5551234567" class="btn btn-primary" style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                    
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Find Local Dermatologists:</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li><a href="https://www.aad.org/public/everyday-care/skin-care-basics/care-for-skin-of-color/dermatologist-locator" target="_blank" style="color: var(--secondary-blue);">AAD Dermatologist Locator</a></li>
+                        <li><a href="https://www.healthgrades.com" target="_blank" style="color: var(--secondary-blue);">HealthGrades Directory</a></li>
+                        <li><a href="https://www.zocdoc.com" target="_blank" style="color: var(--secondary-blue);">ZocDoc Online Booking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Oncology Services -->
+                <div class="card" style="border-top: 4px solid var(--green-success);">
+                    <h3 style="color: var(--green-success); margin-bottom: 1rem;">
+                        <i class="fas fa-heartbeat"></i> Oncologist
+                    </h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray-medium);">Cancer treatment and specialized care</p>
+                    
+                    <div style="background: #ecfdf5; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <h4 style="color: var(--green-success);">Sample Cancer Center</h4>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-phone"></i> <strong>Phone:</strong> (555) 456-ONCO</p>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 456 Cancer Care Blvd.</p>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>Hours:</strong> 24/7 Urgent Care</p>
+                        <a href="tel:5554567890" class="btn" style="background: var(--green-success); color: white; margin-top: 0.5rem; font-size: 0.9rem;">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                    
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Cancer Centers:</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li><a href="https://www.cancer.org" target="_blank" style="color: var(--green-success);">American Cancer Society</a></li>
+                        <li><a href="https://www.cancer.gov" target="_blank" style="color: var(--green-success);">National Cancer Institute</a></li>
+                        <li><a href="https://www.nccn.org" target="_blank" style="color: var(--green-success);">NCCN Treatment Centers</a></li>
+                    </ul>
+                </div>
+
+                <!-- General Physician -->
+                <div class="card" style="border-top: 4px solid #f59e0b;">
+                    <h3 style="color: #d97706; margin-bottom: 1rem;">
+                        <i class="fas fa-stethoscope"></i> General Physician
+                    </h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray-medium);">Primary care and initial consultations</p>
+                    
+                    <div style="background: #fef3c7; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <h4 style="color: #d97706;">Sample Family Practice</h4>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-phone"></i> <strong>Phone:</strong> (555) 789-CARE</p>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 789 Primary Care Ave.</p>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Sat 7AM-7PM</p>
+                        <a href="tel:5557890123" class="btn" style="background: #d97706; color: white; margin-top: 0.5rem; font-size: 0.9rem;">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                    
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Find Primary Care:</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li>Your health insurance provider directory</li>
+                        <li>Hospital system physician networks</li>
+                        <li>Community health centers</li>
+                    </ul>
+                </div>
+
+                <!-- Mental Health Support -->
+                <div class="card" style="border-top: 4px solid #8b5cf6;">
+                    <h3 style="color: #7c3aed; margin-bottom: 1rem;">
+                        <i class="fas fa-brain"></i> Mental Health Support
+                    </h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray-medium);">Emotional support during health challenges</p>
+                    
+                    <div style="background: #f3e8ff; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <h4 style="color: #7c3aed;">Mental Health Resources</h4>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-phone"></i> <strong>Crisis Hotline:</strong> 988 (Suicide & Crisis Lifeline)</p>
+                        <p style="margin: 0.5rem 0;"><i class="fas fa-comments"></i> <strong>Text Support:</strong> Text HOME to 741741</p>
+                        <a href="tel:988" class="btn" style="background: #7c3aed; color: white; margin-top: 0.5rem; font-size: 0.9rem;">
+                            <i class="fas fa-phone"></i> Call 988
+                        </a>
+                    </div>
+                    
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Support Resources:</h4>
+                    <ul style="margin-left: 1rem;">
+                        <li><a href="https://www.nami.org" target="_blank" style="color: #7c3aed;">NAMI Support Groups</a></li>
+                        <li><a href="https://www.psychologytoday.com" target="_blank" style="color: #7c3aed;">Find Local Therapists</a></li>
+                        <li>Cancer support groups at local hospitals</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preparation for Medical Visits -->
+        <section class="card">
+            <h2 style="color: var(--primary-blue); margin-bottom: 1.5rem;">
+                <i class="fas fa-clipboard-list"></i> Preparing for Your Medical Visit
+            </h2>
+            <div class="grid grid-2">
+                <div>
+                    <h3 style="color: var(--secondary-blue); margin-bottom: 1rem;">Before Your Appointment</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Document symptoms:</strong> Take photos of concerning lesions</li>
+                        <li><strong>List questions:</strong> Write down what you want to ask</li>
+                        <li><strong>Medical history:</strong> Gather family history information</li>
+                        <li><strong>Current medications:</strong> Bring list of all medications</li>
+                        <li><strong>Insurance cards:</strong> Verify coverage and bring ID</li>
+                        <li><strong>Previous results:</strong> Bring any prior test results</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--secondary-blue); margin-bottom: 1rem;">Questions to Ask</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li>What type of skin lesion/cancer is this?</li>
+                        <li>What stage is it, if malignant?</li>
+                        <li>What are my treatment options?</li>
+                        <li>What are the risks and benefits of each option?</li>
+                        <li>How often should I have follow-up exams?</li>
+                        <li>Are there lifestyle changes I should make?</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online Resources -->
+        <section class="card" style="background: linear-gradient(135deg, var(--light-blue) 0%, #bfdbfe 100%); border: none;">
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">
+                <i class="fas fa-laptop-medical"></i> Trusted Online Medical Resources
+            </h2>
+            <div class="grid grid-3">
+                <div style="background: white; padding: 1.5rem; border-radius: 0.8rem; box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--green-success); margin-bottom: 1rem;"></i>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">American Cancer Society</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Comprehensive cancer information and support</p>
+                    <a href="https://www.cancer.org/cancer/melanoma-skin-cancer.html" target="_blank" class="btn btn-primary" style="font-size: 0.8rem;">
+                        Visit Website
+                    </a>
+                </div>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 0.8rem; box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-microscope" style="font-size: 3rem; color: var(--secondary-blue); margin-bottom: 1rem;"></i>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Skin Cancer Foundation</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Dedicated skin cancer prevention and education</p>
+                    <a href="https://www.skincancer.org" target="_blank" class="btn btn-primary" style="font-size: 0.8rem;">
+                        Visit Website
+                    </a>
+                </div>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 0.8rem; box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-user-md" style="font-size: 3rem; color: #f59e0b; margin-bottom: 1rem;"></i>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">American Academy of Dermatology</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Professional dermatology resources</p>
+                    <a href="https://www.aad.org/public/diseases/skin-cancer" target="_blank" class="btn btn-primary" style="font-size: 0.8rem;">
+                        Visit Website
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SkinGuard AI. For educational purposes only.</p>
+        <p>This tool is not a substitute for professional medical diagnosis. Always consult healthcare professionals.</p>
+    </footer>
+
+    <!-- JavaScript for mobile navigation -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                });
+            });
+        }
+
+        // Add pulse animation for emergency button
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
