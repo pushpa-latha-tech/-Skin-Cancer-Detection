@@ -26,10 +26,7 @@ This is a deep learning-based web application that detects **Melanoma (skin canc
 
 ## 🛠 Installation & Usage
 
-### 1. Clone the repository
-
-bash
-git clone https://github.com/your-username/melanoma-skin-cancer-classifier.git
+1.
 cd melanoma-skin-cancer-classifier
 
 ### 2. Install Dependencies
