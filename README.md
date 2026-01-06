@@ -5,6 +5,10 @@ This project is a Gradio-based web application for detecting Melanoma skin cance
 
 This is a deep learning-based web application that detects **Melanoma (skin cancer)** from images of skin lesions using a trained Convolutional Neural Network (CNN) model. The app is built using **Gradio** and leverages **TensorFlow** for model inference.
 
+## 🎥 Project Demo Video
+👉 Watch the demo here: https://drive.google.com/file/d/19ETFAS9ssLA30pF1duw6_1Mfo-76WvAb/view?usp=sharing
+
+
 ---
 
 ## 🚀 Features
